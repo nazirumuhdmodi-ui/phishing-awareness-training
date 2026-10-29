@@ -1,1 +1,72 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberSafe | Awareness Training</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
+header{background:#102a43;color:white;padding:25px 15px;text-align:center}
+main{max-width:750px;margin:25px auto;padding:20px}
+.card{background:white;padding:22px;margin:18px 0;border-radius:12px;box-shadow:0 3px 12px #0001}
+h2{color:#087e8b}
+button{background:#087e8b;color:white;padding:12px 18px;border:0;border-radius:7px;font-size:16px;cursor:pointer}
+.answer{margin-top:15px;font-weight:bold;line-height:1.6}
+footer{text-align:center;padding:20px;color:#52606d}
+</style>
+</head>
+<body>
+<header>
+<h1>🛡️ CyberSafe</h1>
+<p>Cybersecurity Awareness Training</p>
+</header>
+<main>
+<section class="card">
+<h2>Welcome to CyberSafe</h2>
+<p>Learn how to recognize phishing attacks, protect your accounts, and stay safe online.</p>
+<p><strong>Training mode:</strong> All examples on this page are harmless simulations.</p>
+</section>
+
+<section class="card">
+<h2>Lesson 1: Spot the Phishing</h2>
+<p>You receive a message saying: "URGENT! Your account will be closed. Click this unfamiliar link immediately to verify your password."</p>
+<p>What should you do?</p>
+<button onclick="checkAnswer(1)">Click the link</button>
+<button onclick="checkAnswer(2)" style="margin:5px">Verify through the official website</button>
+<div id="answer" class="answer" aria-live="polite"></div>
+</section>
+
+<section class="card">
+<h2>Lesson 2: Ransomware Safety</h2>
+<p>Ransomware can lock files and demand payment. Never run unknown attachments or software.</p>
+<button onclick="showSafety()">View Safety Advice</button>
+<div id="safety" class="answer" aria-live="polite"></div>
+</section>
+
+<section class="card">
+<h2>Security Checklist</h2>
+<label><input type="checkbox"> I use unique passwords.</label><br><br>
+<label><input type="checkbox"> I enable two-factor authentication.</label><br><br>
+<label><input type="checkbox"> I check links before opening them.</label><br><br>
+<label><input type="checkbox"> I keep my software updated.</label>
+</section>
+</main>
+<footer>CyberSafe Awareness Project | Learn. Detect. Protect.</footer>
+<script>
+function checkAnswer(choice){
+const a=document.getElementById('answer');
+if(choice===2){
+a.textContent='Correct! Visit the official website directly. Never use suspicious links to verify your account.';
+a.style.color='green';
+}else{
+a.textContent='Not safe! Urgent demands and unfamiliar links are common phishing warning signs.';
+a.style.color='crimson';
+}
+}
+function showSafety(){
+document.getElementById('safety').textContent='Stay safe: keep backups, update your devices, use reputable security software, and never open unexpected attachments.';
+}
+</script>
+</body>
+</html>
